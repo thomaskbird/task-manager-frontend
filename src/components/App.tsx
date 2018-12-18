@@ -1,5 +1,8 @@
 import * as React from "react";
 import "./App.scss";
+import { BrowserRouter, Route } from "react-router-dom";
+import { LoginView } from "./views/LoginView/LoginView";
+import { WrapperView } from "./views/WrapperView/WrapperView";
 
 export interface AppProps {
   config?: object;
@@ -18,10 +21,19 @@ export class App extends React.Component<AppProps, State> {
 
   public render(): JSX.Element {
     return (
-        <div>
-            <h1>Welcome To Your Blank Starter App</h1>
-            <p>This repo utilizes webpack for build and development server. It combines sass for css, typescript and react for a seamless easy to use starting point for any single page app.</p>
-        </div>
+      <BrowserRouter>
+        <>
+          <Route
+            exact={true}
+            path={"/"}
+            component={LoginView}
+          />
+          <Route
+            path={"/dashboard"}
+            component={WrapperView}
+          />
+        </>
+      </BrowserRouter>
     );
   }
 }
