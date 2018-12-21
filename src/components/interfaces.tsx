@@ -5,8 +5,8 @@ interface Timestamps {
 }
 
 export interface ActionTimestamps {
-  due_at: string;
-  completed_at: string;
+  due_at: string | undefined;
+  completed_at: string | undefined;
 }
 
 export interface Label extends Timestamps {
@@ -17,6 +17,7 @@ export interface Label extends Timestamps {
 
 export interface List extends Timestamps, ActionTimestamps  {
   id: number;
+  parent_id: number;
   name: string;
   slug: string;
   note: string;
@@ -24,6 +25,16 @@ export interface List extends Timestamps, ActionTimestamps  {
 
 export interface Task extends Timestamps, ActionTimestamps {
   id: number;
-  name: string;
-  slug: string;
+  list_id: number;
+  text: string;
+  order: number;
+}
+
+export enum ModalDataType {
+  list = "List",
+  settings = "Settings"
+}
+
+export interface ModalData {
+  type: ModalDataType;
 }

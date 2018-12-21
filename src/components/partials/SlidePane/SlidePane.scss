@@ -1,0 +1,10 @@
+.SlidePane {
+  width: 0%;
+}
+
+.SlidePane__open {
+  .SlidePane {
+    width: 100%;
+    border-left: 1px solid #ccc;
+  }
+}

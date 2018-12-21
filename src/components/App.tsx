@@ -4,6 +4,24 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { LoginView } from "./views/LoginView/LoginView";
 import { WrapperView } from "./views/WrapperView/WrapperView";
 
+/**
+ * Font Awesome - Any icon to be used in the components must be imported here
+ */
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faChevronDown,
+  faChevronUp,
+  faPlus,
+  faTimes
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  faTimes,
+  faPlus,
+  faChevronUp,
+  faChevronDown
+);
+
 export interface AppProps {
   config?: object;
 }

@@ -1,0 +1,49 @@
+.Profile {
+  &__header {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+    &-image {
+      flex: 1 0 0;
+
+      img {
+        width: 100%;
+        border-radius: 1000px;
+      }
+    }
+
+    &-name {
+      flex: 5 0 0;
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+
+    &-toggle-btn {
+      float: right;
+      margin-top: 6px;
+      font-size: .7rem;
+      margin-right: 5px;
+    }
+  }
+
+  &__body {
+    height: 0;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+
+    &.open {
+      height: 100%;
+    }
+
+    &-link-list {
+      padding: 10px 40px;
+      margin-bottom: 0;
+
+      &:last-child {
+        padding-top: 5px;
+        border-top: 1px solid #ccc;
+      }
+    }
+  }
+}
