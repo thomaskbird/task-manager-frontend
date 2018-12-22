@@ -2,6 +2,7 @@ import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Modal.scss";
 import {ModalData, ModalDataType} from "../../interfaces";
+import {ListAddForm} from "../forms/ListAddForm/ListAddForm";
 
 export interface ModalProps {
   isOpen: boolean;
@@ -39,10 +40,27 @@ export class Modal extends React.Component<ModalProps, State> {
   }
 
   public render(): JSX.Element {
+
+    let modalContent: JSX.Element | undefined;
+
+    switch(this.props.modalData && this.props.modalData.type) {
+      case ModalDataType.list:
+        modalContent = (
+          <ListAddForm
+            onSubmit={(vals) => {
+              this.handleSubmit(vals);
+            }}
+          />
+        );
+      break;
+    }
+
     return (
       <div className={this.state.isOpen ? "Modal" : "Modal Modal__closed"}>
         <div className={"Modal__inner"}>
           {this.props.modalData && this.props.modalData!.type === ModalDataType.list ? "Modal list add" : "Generic Modal"}
+
+          {this.props.modalData && modalContent ? modalContent : undefined}
 
           <span
             onClick={() => {
@@ -56,5 +74,9 @@ export class Modal extends React.Component<ModalProps, State> {
         </div>
       </div>
     );
+  }
+
+  private handleSubmit(vals: any): void {
+    console.log("Submit", vals);
   }
 }
