@@ -3,6 +3,7 @@ import "./App.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 import { LoginView } from "./views/LoginView/LoginView";
 import { WrapperView } from "./views/WrapperView/WrapperView";
+import { Api } from "../services/Api";
 
 /**
  * Font Awesome - Any icon to be used in the components must be imported here
@@ -26,7 +27,12 @@ export interface AppProps {
   config?: object;
 }
 
-interface State {}
+interface State {
+  /**
+   * Api object
+   */
+  api: any;
+}
 
 export class App extends React.Component<AppProps, State> {
   public static readonly displayName = "App component";
@@ -34,7 +40,15 @@ export class App extends React.Component<AppProps, State> {
   constructor(props: AppProps, context: any) {
     super(props, context);
 
-    this.state = {};
+    this.state = {
+      api: new Api()
+    };
+  }
+
+  public componentDidMount(): void {
+    this.state.api.get("/api/users").then(users => {
+      console.log("users", users);
+    });
   }
 
   public render(): JSX.Element {

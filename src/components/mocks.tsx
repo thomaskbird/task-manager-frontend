@@ -1,4 +1,4 @@
-import {Label} from "./interfaces";
+import {Label} from "../interfaces";
 
 export const MOCKS = {
   labels: [

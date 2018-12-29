@@ -5,7 +5,7 @@ import { Sidebar } from "../../partials/Sidebar/Sidebar";
 import { ContentArea } from "../../partials/ContentArea/ContentArea";
 import {SlidePane} from "../../partials/SlidePane/SlidePane";
 import {Modal} from "../../partials/Modal/Modal";
-import {ModalData, ModalDataType} from "../../interfaces";
+import {ModalData, ModalDataType} from "../../../interfaces";
 
 export interface WrapperViewProps {}
 

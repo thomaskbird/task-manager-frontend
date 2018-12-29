@@ -38,3 +38,18 @@ export enum ModalDataType {
 export interface ModalData {
   type: ModalDataType;
 }
+
+export interface ApiConfigHeaders {
+  "user-agent": string;
+  "content-type": string;
+  Authorization?: string;
+}
+
+export interface ApiConfig {
+  cache: string;
+  credentials: string;
+  headers: ApiConfigHeaders;
+  mode: string;
+  redirect: string;
+  referrer: string;
+}
