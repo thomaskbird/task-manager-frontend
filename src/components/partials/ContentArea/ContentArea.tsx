@@ -33,7 +33,7 @@ export class ContentArea extends React.Component<ContentAreaProps, State> {
               component={TaskView}
             />
             <Route
-              path={"/lists"}
+              path={"/labels"}
               component={LabelView}
             />
           </>

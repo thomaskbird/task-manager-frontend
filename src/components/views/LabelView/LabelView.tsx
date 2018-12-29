@@ -17,7 +17,7 @@ export class LabelView extends React.Component<LabelViewProps, State> {
   public render(): JSX.Element {
     return (
       <div className={"LabelView"}>
-        Task
+        Labels
       </div>
     );
   }
