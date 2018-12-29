@@ -1,5 +1,10 @@
 .Sidebar {
-  flex: 1 1 0;
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
   border-right: 1px solid #ccc;
+
+  &__add-list-btn {
+    align-content: end;
+  }
 }

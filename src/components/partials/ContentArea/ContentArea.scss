@@ -1,4 +1,10 @@
 .ContentArea {
-  flex: 4 1 0;
-  padding: 15px;
+  width: 75%;
+}
+
+.SlidePane__open {
+  .ContentArea {
+    width: 0;
+    overflow: hidden;
+  }
 }
