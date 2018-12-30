@@ -15,7 +15,7 @@ export class Api {
       "user-agent": "Mozilla/4.0 MDN Example",
       "content-type": "application/json"
     },
-    mode: "no-cors", // no-cors, *same-origin
+    mode: "cors", // no-cors, *same-origin
     redirect: "follow", // *manual, error
     referrer: "no-referrer", // *client
   };
