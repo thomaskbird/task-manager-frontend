@@ -7,4 +7,29 @@
   &__add-list-btn {
     align-content: end;
   }
+
+  &__link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      color: #666;
+      font-size: .8rem;
+      padding: 5px 10px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #eee;
+
+      &:hover {
+        color: #000;
+        cursor: pointer;
+        background: #eee;
+      }
+    }
+
+    &--label {
+      color: #ccc;
+      margin-right: 5px;
+    }
+  }
 }

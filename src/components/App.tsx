@@ -13,25 +13,23 @@ import {
   faChevronDown,
   faChevronUp,
   faPlus,
-  faTimes
+  faTimes,
+  faList,
+  faListAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faTimes,
   faPlus,
   faChevronUp,
-  faChevronDown
+  faChevronDown,
+  faList,
+  faListAlt,
 );
 
-export interface AppProps {
-  config?: object;
-}
+export interface AppProps {}
 
 interface State {
-  /**
-   * Api object
-   */
-  api: any;
 }
 
 export class App extends React.Component<AppProps, State> {
@@ -40,15 +38,7 @@ export class App extends React.Component<AppProps, State> {
   constructor(props: AppProps, context: any) {
     super(props, context);
 
-    this.state = {
-      api: new Api()
-    };
-  }
-
-  public componentDidMount(): void {
-    this.state.api.get("/api/users").then(users => {
-      console.log("users", users);
-    });
+    this.state = {};
   }
 
   public render(): JSX.Element {

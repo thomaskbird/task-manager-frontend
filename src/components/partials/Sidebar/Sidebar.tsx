@@ -2,6 +2,8 @@ import * as React from "react";
 import "./Sidebar.scss";
 import {Profile} from "../Profile/Profile";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Label} from "../../../interfaces";
+import {MOCKS} from "../../../services/mocks";
 
 export interface SidebarProps {
   onToggleSlidePane(): void;
@@ -10,7 +12,9 @@ export interface SidebarProps {
   ): void;
 }
 
-interface State {}
+interface State {
+  labels: Label[] | undefined;
+}
 
 export class Sidebar extends React.Component<SidebarProps, State> {
   public static readonly displayName = "Sidebar";
@@ -18,13 +22,36 @@ export class Sidebar extends React.Component<SidebarProps, State> {
   constructor(props: SidebarProps, context: any) {
     super(props, context);
 
-    this.state = {};
+    this.state = {
+      labels: undefined
+    };
+  }
+
+  public componentDidMount(): void {
+    this.setState({
+      labels: MOCKS.labels
+    })
   }
 
   public render(): JSX.Element {
     return (
       <div className={"Sidebar"}>
         <Profile/>
+
+        <ul className={"Sidebar__link-list"}>
+        {this.state.labels ? this.state.labels.map((label, idx) => {
+          return (
+            <li key={idx}>
+              <FontAwesomeIcon
+                icon="list-alt"
+                className={"Sidebar__link-list--label"}
+              />
+
+              {label.name}
+            </li>
+          );
+        }) : (undefined)}
+        </ul>
 
         <button
           className={"btn btn-light"}
