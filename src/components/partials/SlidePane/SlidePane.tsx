@@ -48,9 +48,29 @@ export class SlidePane extends React.Component<SlidePaneProps, State> {
                 </div>
                 <div className={"SlidePane__content-section"}>
                     <IconFormInput
+                      placeholderText={"Due..."}
                       icon={SupportedTextInputIconTypes.calendar}
                       val={this.props.listData.list.due_at}
+                      onChange={(event) => {
+                        console.log("event", event);
+                      }}
                     />
+                  <IconFormInput
+                    placeholderText={"Reminder..."}
+                    icon={SupportedTextInputIconTypes.clock}
+                    val={this.props.listData.list.remind_at}
+                    onChange={(event) => {
+                      console.log("event", event);
+                    }}
+                  />
+                  <IconFormInput
+                    placeholderText={"Enter note..."}
+                    icon={SupportedTextInputIconTypes.pencil}
+                    val={this.props.listData.list.due_at}
+                    onChange={(event) => {
+                      console.log("event", event);
+                    }}
+                  />
                 </div>
             </div>
         ) : <></>;

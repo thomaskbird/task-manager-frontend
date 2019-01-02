@@ -7,6 +7,7 @@ interface Timestamps {
 }
 
 export interface ActionTimestamps {
+  remind_at: string | undefined;
   due_at: string | undefined;
   completed_at: string | undefined;
 }
@@ -74,13 +75,11 @@ export interface SlidePaneListData {
 }
 
 export enum SupportedTextInputIconTypes {
-  calendar = "Calendars",
-  clock = "Clock",
-  pencil = "Pencil",
-  checkbox = "Checkbox",
-  add = "Add",
-  paperclip = "Paperclip",
-  comment= "Comment"
+  calendar = "calendar",
+  clock = "clock",
+  pencil = "pencil-alt",
+  checkbox = "square",
+  add = "plus",
+  paperclip = "paper-clip",
+  comment= "comment"
 }
-
-export type SupportedTextInputIconTypes = Pick<IconProp, "calendar" | "clock">;

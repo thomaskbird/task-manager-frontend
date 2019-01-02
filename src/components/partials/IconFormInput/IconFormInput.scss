@@ -1,0 +1,39 @@
+.IconFormInput {
+  padding: 5px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  &:hover {
+    .IconFormInput__icon {
+      color: #999;
+    }
+
+    .IconFormInput__text-input-field {
+      color: #999;
+    }
+  }
+
+  &.focused {
+    .IconFormInput__icon {
+      color: #000;
+    }
+
+    .IconFormInput__text-input-field {
+      color: #000;
+    }
+  }
+
+  &__icon {
+    top: 15px;
+    left: 15px;
+    color: #aaa;
+    position: absolute;
+  }
+
+  &__text-input-field {
+    color: #aaa;
+    text-align: right;
+  }
+}
