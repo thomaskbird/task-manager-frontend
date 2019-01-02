@@ -3,7 +3,6 @@ import "./App.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 import { LoginView } from "./views/LoginView/LoginView";
 import { WrapperView } from "./views/WrapperView/WrapperView";
-import { Api } from "../services/Api";
 
 /**
  * Font Awesome - Any icon to be used in the components must be imported here
@@ -16,6 +15,14 @@ import {
   faTimes,
   faList,
   faListAlt,
+  faSquare,
+  faCheckSquare,
+  faStar,
+  faCalendar,
+  faComment,
+  faClock,
+  faPencilAlt,
+  faPaperclip,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -25,6 +32,14 @@ library.add(
   faChevronDown,
   faList,
   faListAlt,
+  faSquare,
+  faCheckSquare,
+  faStar,
+  faCalendar,
+  faComment,
+  faClock,
+  faPencilAlt,
+  faPaperclip,
 );
 
 export interface AppProps {}

@@ -1,7 +1,9 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 interface Timestamps {
   created_at: string;
   updated_at: string;
-  deleted_at: string;
+  deleted_at: string | undefined;
 }
 
 export interface ActionTimestamps {
@@ -15,6 +17,17 @@ export interface Label extends Timestamps {
   slug: string;
 }
 
+export enum CommentType {
+  list = "List",
+  task = "Task"
+}
+
+export interface Comment extends Timestamps {
+  id: number;
+  user_id: number;
+  target_id: number;
+  comment_type: CommentType;
+}
 export interface List extends Timestamps, ActionTimestamps  {
   id: number;
   parent_id: number;
@@ -53,3 +66,21 @@ export interface ApiConfig {
   redirect: string;
   referrer: string;
 }
+
+export interface SlidePaneListData {
+  list: List;
+  tasks: Task[];
+  comments: Comment[];
+}
+
+export enum SupportedTextInputIconTypes {
+  calendar = "Calendars",
+  clock = "Clock",
+  pencil = "Pencil",
+  checkbox = "Checkbox",
+  add = "Add",
+  paperclip = "Paperclip",
+  comment= "Comment"
+}
+
+export type SupportedTextInputIconTypes = Pick<IconProp, "calendar" | "clock">;

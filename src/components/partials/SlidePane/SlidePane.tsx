@@ -1,10 +1,24 @@
 import * as React from "react";
 import "./SlidePane.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SlidePaneListData, SupportedTextInputIconTypes } from "../../../interfaces";
+import { IconFormInput } from "../IconFormInput/IconFormInput";
 
-export interface SlidePaneProps {}
+export interface SlidePaneProps {
+    listData: SlidePaneListData | undefined;
+}
 
 interface State {}
 
+/**
+ * Slide Pane header
+ * Due date:
+ * Remind me:
+ * Task List:
+ * Add task:
+ * Note:
+ * Comments
+ */
 export class SlidePane extends React.Component<SlidePaneProps, State> {
     public static readonly displayName = "Slide Pane";
 
@@ -15,10 +29,30 @@ export class SlidePane extends React.Component<SlidePaneProps, State> {
     }
 
     public render(): JSX.Element {
-        return (
+        return this.props.listData ? (
             <div className={"SlidePane animated"}>
-                Slide Pane
+                <div className="SlidePane__header">
+                  <FontAwesomeIcon
+                    icon="square"
+                    className={"SlidePane__header-completed-toggle-button"}
+                  />
+
+                  <span className={"SlidePane__header-title-text"}>
+                    {this.props.listData.list.name}
+                  </span>
+
+                  <FontAwesomeIcon
+                    icon="star"
+                    className={"SlidePane__header-favorite-toggle-button"}
+                  />
+                </div>
+                <div className={"SlidePane__content-section"}>
+                    <IconFormInput
+                      icon={SupportedTextInputIconTypes.calendar}
+                      val={this.props.listData.list.due_at}
+                    />
+                </div>
             </div>
-        );
+        ) : <></>;
     }
 }
