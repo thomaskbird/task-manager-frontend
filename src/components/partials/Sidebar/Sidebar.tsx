@@ -60,17 +60,17 @@ export class Sidebar extends React.Component<SidebarProps, State> {
           }}
         >Toggle Slide Pane</button>
         <button
-          className={"btn btn-light Sidebar__add-list-btn"}
+          className={"btn btn-light Sidebar__add-label-btn"}
           onClick={() => {
-            this.props.onToggleModal("listAdd");
+            this.props.onToggleModal("labelAdd");
           }}
         >
           <FontAwesomeIcon
             icon="plus"
-            className={"Sidebar__add-list"}
+            className={"Sidebar__add-label"}
           />
 
-          List
+          Label
         </button>
       </div>
     );

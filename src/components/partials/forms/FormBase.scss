@@ -1,0 +1,40 @@
+.Form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &-label {
+
+    }
+
+    &-text-input {
+
+    }
+
+    &.inline {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+
+      .Form__group-label {
+        position: absolute;
+        top: 7px;
+        lefT: 14px;
+
+        &.hidden {
+          display: none;
+        }
+      }
+
+      .Form__group-text-input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}

@@ -15,14 +15,15 @@ import {
   faTimes,
   faList,
   faListAlt,
-  faSquare,
-  faCheckSquare,
-  faStar,
   faCalendar,
   faComment,
   faClock,
   faPencilAlt,
   faPaperclip,
+  faSquare,
+  faCheckSquare,
+  faThumbtack,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -40,6 +41,7 @@ library.add(
   faClock,
   faPencilAlt,
   faPaperclip,
+  faThumbtack,
 );
 
 export interface AppProps {}

@@ -1,5 +1,5 @@
 import { config } from "../config";
-import {ApiConfig} from "../interfaces";
+import { ApiConfig } from "../interfaces";
 
 export class Api {
   private config: any;
@@ -8,6 +8,9 @@ export class Api {
     this.config = config;
   }
 
+  /**
+   * configuration object for api calls
+   */
   private apiConfig: ApiConfig = {
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
     credentials: "same-origin", // include, *omit
@@ -20,6 +23,13 @@ export class Api {
     referrer: "no-referrer", // *client
   };
 
+  /**
+   * Sends a post request
+   * @param {string} url - The url of the api request
+   * @param {object} data - The data to post with the request
+   * @param {string | boolean} token - the token if resource is secure
+   * @returns {any} - a promise
+   */
   public post(
     url: string,
     data: object,
@@ -43,6 +53,12 @@ export class Api {
     });
   }
 
+  /**
+   * A get http request to the api
+   * @param {string} url - The url of the request
+   * @param {string | boolean} token - The token of the request
+   * @returns {any} - A promise
+   */
   public get(
     url: string,
     token: string | boolean = false
@@ -64,6 +80,13 @@ export class Api {
     });
   }
 
+  /**
+   * Fetches the actual request
+   *
+   * @param {string} url - the fully qualified url
+   * @param {object} config - the full requests headers
+   * @returns {any} - a api response
+   */
   public send(
     url: string,
     config: object

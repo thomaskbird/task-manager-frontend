@@ -1,0 +1,27 @@
+.ListItemIndexView {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+
+  svg {
+    flex: 1 0 0;
+  }
+
+  &__list-title {
+    flex: 20 0 0;
+  }
+
+  &__toggle-completed-btn {
+    margin-top: 4px;
+    margin-right: 10px;
+  }
+
+  &__toggle-pinned-btn {
+    margin: 6px 5px;
+  }
+
+  &__toggle-star-btn {
+    margin: 4px 5px;
+  }
+}

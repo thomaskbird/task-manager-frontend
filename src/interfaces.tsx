@@ -46,6 +46,7 @@ export interface Task extends Timestamps, ActionTimestamps {
 
 export enum ModalDataType {
   list = "List",
+  label = "Label",
   settings = "Settings"
 }
 

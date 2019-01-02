@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./ListAddForm.scss";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export interface ListAddFormProps {
   onSubmit(vals: object): void;
@@ -7,6 +8,7 @@ export interface ListAddFormProps {
 
 interface State {
   listName: string | undefined;
+  isLabelShown: boolean;
 }
 
 export class ListAddForm extends React.Component<ListAddFormProps, State> {
@@ -16,33 +18,39 @@ export class ListAddForm extends React.Component<ListAddFormProps, State> {
     super(props, context);
 
     this.state = {
-      listName: ""
+      listName: undefined,
+      isLabelShown: true
     };
   }
 
   public render(): JSX.Element {
     return (
-      <form className={"Form"} onSubmit={(event) => { this.submit(event) }}>
-        <div className={"Form__group"}>
-          <label htmlFor="name" className={"Form__group-label"}>
-            Name:
+      <form className={"Form ListAddForm"} onSubmit={(event) => { this.submit(event) }}>
+        <div className={"Form__group inline"}>
+          <label htmlFor="name" className={this.state.isLabelShown ? "Form__group-label" : "Form__group-label hidden"}>
+            List name...
           </label>
           <input
             type="text"
             id={"name"}
-            className={"Form__group-text-input"}
+            className={"Form__group-text-input form-control"}
             value={this.state.listName}
+            onFocus={(event) => {
+              this.focus(event);
+            }}
             onChange={(event) => {
               this.change(event);
-          }} />
+            }} />
+          <button
+            type="submit"
+            className={"btn btn-primary"}
+          >
+            <FontAwesomeIcon
+              icon="plus"
+              className={"ListAddForm__button-icon"}
+            />
+          </button>
         </div>
-
-        <button
-          type="submit"
-          className={"btn btn-primary"}
-        >
-          Create List
-        </button>
       </form>
     );
   }
@@ -51,6 +59,12 @@ export class ListAddForm extends React.Component<ListAddFormProps, State> {
     this.setState({
       listName: event.target.value
     });
+  }
+
+  private focus(event: any): void {
+    this.setState({
+      isLabelShown: !!this.state.isLabelShown
+    })
   }
 
   private submit(event: any): void {

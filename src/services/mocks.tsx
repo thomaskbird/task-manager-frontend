@@ -31,9 +31,11 @@ export const MOCKS = {
     {
       id: 1,
       parent_id: 0,
-      name: "Thomas",
-      slug: "thomas",
-      note: "A set of tasks for Thomas",
+      name: "Grocery",
+      slug: "grocery",
+      note: "A grocery list",
+      due_at: undefined,
+      completed_at: undefined,
       created_at: "2018-10-11 12:00:00",
       updated_at: "2018-10-11 12:00:00",
       deleted_at: "2018-10-11 12:00:00"
@@ -43,7 +45,9 @@ export const MOCKS = {
       parent_id: 1,
       name: "Thomas",
       slug: "thomas",
-      note: "A set of tasks for Grace",
+      note: "A set of tasks for Thomas",
+      due_at: undefined,
+      completed_at: "2018-10-11 12:00:00",
       created_at: "2018-10-11 12:00:00",
       updated_at: "2018-10-11 12:00:00",
       deleted_at: "2018-10-11 12:00:00"
@@ -51,9 +55,11 @@ export const MOCKS = {
     {
       id: 3,
       parent_id: 0,
-      name: "Thomas",
-      slug: "thomas",
-      note: "Tasks for anybody",
+      name: "Around the house",
+      slug: "around-the-house",
+      note: "A task list for things that need to be done around the house",
+      due_at: undefined,
+      completed_at: undefined,
       created_at: "2018-10-11 12:00:00",
       updated_at: "2018-10-11 12:00:00",
       deleted_at: "2018-10-11 12:00:00"

@@ -87,10 +87,10 @@ export class WrapperView extends React.Component<WrapperViewProps, State> {
 
   private openModal(type?: string): void {
     switch(type) {
-      case "listAdd":
+      case "labelAdd":
         this.setState({
           modalData: {
-            type: ModalDataType.list
+            type: ModalDataType.label
           }
         });
       break;

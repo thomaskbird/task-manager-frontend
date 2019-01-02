@@ -2,7 +2,7 @@ import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Modal.scss";
 import {ModalData, ModalDataType} from "../../../interfaces";
-import {ListAddForm} from "../forms/ListAddForm/ListAddForm";
+import {ListAddForm} from "../forms/LabelAddForm/LabelAddForm";
 
 export interface ModalProps {
   isOpen: boolean;
