@@ -38,13 +38,63 @@ export class WrapperView extends React.Component<WrapperViewProps, State> {
         name: "First test list",
         slug: "first-test-list",
         note: "",
+        remind_at: undefined,
         due_at: undefined,
         completed_at: undefined,
         created_at: "2019-01-01 00:00:00",
         updated_at: "2019-01-01 00:00:00",
         deleted_at: undefined
       },
-      tasks: [],
+      tasks: [
+        {
+          id: 1,
+          list_id: 1,
+          text: "This is the first ask of the list",
+          order: 1,
+          remind_at: undefined,
+          due_at: undefined,
+          completed_at: undefined,
+          created_at: "2019-01-01 00:00:00",
+          updated_at: "2019-01-01 00:00:00",
+          deleted_at: undefined
+        },
+        {
+          id: 3,
+          list_id: 1,
+          text: "This is the second task of the entire list",
+          order: 1,
+          remind_at: undefined,
+          due_at: undefined,
+          completed_at: undefined,
+          created_at: "2019-01-01 00:00:00",
+          updated_at: "2019-01-01 00:00:00",
+          deleted_at: undefined
+        },
+        {
+          id: 6,
+          list_id: 1,
+          text: "Pick up groceries",
+          order: 1,
+          remind_at: undefined,
+          due_at: undefined,
+          completed_at: undefined,
+          created_at: "2019-01-01 00:00:00",
+          updated_at: "2019-01-01 00:00:00",
+          deleted_at: undefined
+        },
+        {
+          id: 4,
+          list_id: 1,
+          text: "Final task at the end of this very short list.",
+          order: 1,
+          remind_at: undefined,
+          due_at: undefined,
+          completed_at: undefined,
+          created_at: "2019-01-01 00:00:00",
+          updated_at: "2019-01-01 00:00:00",
+          deleted_at: undefined
+        }
+      ],
       comments: []
     };
 

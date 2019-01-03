@@ -82,5 +82,6 @@ export enum SupportedTextInputIconTypes {
   checkbox = "square",
   add = "plus",
   paperclip = "paper-clip",
-  comment= "comment"
+  comment = "comment",
+  plus = "plus"
 }

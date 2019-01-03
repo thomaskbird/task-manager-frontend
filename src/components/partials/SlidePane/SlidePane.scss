@@ -7,6 +7,48 @@
   position: absolute;
   transition: all .5s ease;
   border-left: 1px solid #aaa;
+
+  &__header {
+    display: flex;
+    padding: 5px 15px;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+
+    &--completed-toggle-button,
+    &--title-text,
+    &--favorite-toggle-button {
+      flex: 1;
+    }
+
+    &--title-text-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      border-bottom: 1px solid transparent;
+    }
+
+    &--completed-toggle-button {
+      cursor: pointer;
+      margin-top: 9px;
+      margin-right: 10px;
+    }
+
+    &--title-text {
+      flex: 50 0 0;
+      cursor: text;
+    }
+
+    &--favorite-toggle-button {
+      cursor: pointer;
+      margin-top: 9px;
+    }
+  }
+
+  &__content-section {
+    padding: 0 10px;
+  }
 }
 
 .SlidePane__open {
