@@ -6,6 +6,8 @@ import { IconFormInput } from "../IconFormInput/IconFormInput";
 
 export interface SlidePaneProps {
     listData: SlidePaneListData | undefined;
+    onTogglePane(): void;
+    onChangeListVal(): void;
 }
 
 interface State {}
@@ -53,10 +55,16 @@ export class SlidePane extends React.Component<SlidePaneProps, State> {
                     icon="star"
                     className={"SlidePane__header--favorite-toggle-button"}
                   />
-                  <FontAwesomeIcon
-                    icon="times"
-                    className={"SlidePane__header--open-toggle-button"}
-                  />
+                  <span
+                    onClick={() => {
+                      this.props.onTogglePane();
+                    }}
+                  >
+                    <FontAwesomeIcon
+                      icon="times"
+                      className={"SlidePane__header--close-slidepane-button"}
+                    />
+                  </span>
                 </div>
                 <div className={"SlidePane__content-section"}>
                   <IconFormInput

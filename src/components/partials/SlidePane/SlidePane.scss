@@ -3,7 +3,7 @@
   width: 75%;
   left: 100%;
   height: 100%;
-  background: #fff;
+  background: #ccc;
   position: absolute;
   transition: all .5s ease;
   border-left: 1px solid #aaa;
@@ -15,10 +15,12 @@
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
 
-    &--completed-toggle-button,
     &--title-text,
-    &--favorite-toggle-button {
+    &--completed-toggle-button,
+    &--favorite-toggle-button,
+    &--close-slidepane-button {
       flex: 1;
+      cursor: pointer;
     }
 
     &--title-text-input {
@@ -30,9 +32,8 @@
     }
 
     &--completed-toggle-button {
-      cursor: pointer;
       margin-top: 9px;
-      margin-right: 10px;
+      margin-right: 15px;
     }
 
     &--title-text {
@@ -41,8 +42,13 @@
     }
 
     &--favorite-toggle-button {
-      cursor: pointer;
       margin-top: 9px;
+      margin-left: 10px;
+    }
+
+    &--close-slidepane-button {
+      margin-top: 10px;
+      margin-left: 10px;
     }
   }
 

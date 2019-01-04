@@ -118,6 +118,9 @@ export class WrapperView extends React.Component<WrapperViewProps, State> {
           <ContentArea/>
           <SlidePane
             listData={this.state.slidepaneMockListData}
+            onTogglePane={() => {
+              this.toggleSidePane();
+            }}
           />
           <Modal
             isOpen={this.state.isModalOpen}
